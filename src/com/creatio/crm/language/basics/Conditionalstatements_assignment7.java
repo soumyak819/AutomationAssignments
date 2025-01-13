@@ -1,6 +1,6 @@
 package com.creatio.crm.language.basics;
 
-public class Conditionalstatements_assignment2 {
+public class Conditionalstatements_assignment7 {
 
 	public static void main(String[] args) 
 	{

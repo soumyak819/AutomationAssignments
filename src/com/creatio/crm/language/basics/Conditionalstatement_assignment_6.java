@@ -2,21 +2,11 @@ package com.creatio.crm.language.basics;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Conditionalstatement_assignment {
+public class Conditionalstatement_assignment_6 {
 
     public static void main(String[] args) {
-        // List to store transactions
-        List<Integer> transactions = new ArrayList<>();
-        
-        // Adding the given transactions (Positive: Credit, Negative: Debit)
-        transactions.add(50000);
-        transactions.add(-2000);
-        transactions.add(3000);
-        transactions.add(-15000);
-        transactions.add(-200);
-        transactions.add(-300);
-        transactions.add(4000);
-        transactions.add(-3000);
+    	// Store transactions in an array
+    			int[] transactions = { 50000, -2000, 3000, -15000, -200, -300, 4000, -3000 };
         
         // Initialize counters and variables
         int totalCredits = 0;
