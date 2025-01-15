@@ -2,35 +2,32 @@ package com.creatio.crm.language.basics;
 
 public class Assignment11 {
 
-	public static void main(String[] args) {
-		// Given array of values
-        int[] numbers = {12, 34, 11, 36, 87, 98, 93};
+	public static void main(String[] args) { int[] values = {12, 34, 11, 36, 87, 98, 93};
 
-        // Initialize variables for the largest, second largest, and third largest
-        int largest = Integer.MIN_VALUE;
-        int secondLargest = Integer.MIN_VALUE;
-        int thirdLargest = Integer.MIN_VALUE;
+    // Initialize first, second, and third to the first element in the array
+    int first = values[0];
+    int second = values[0];
+    int third = values[0];
 
-        // Loop through the array to determine the largest, second largest, and third largest
-        for (int number : numbers) {
-            if (number > largest) {
-                thirdLargest = secondLargest;
-                secondLargest = largest;
-                largest = number;
-            } else if (number > secondLargest && number != largest) {
-                thirdLargest = secondLargest;
-                secondLargest = number;
-            } else if (number > thirdLargest && number != secondLargest && number != largest) {
-                thirdLargest = number;
-            }
-        }
-
-        // Output the results
-        if (secondLargest != Integer.MIN_VALUE && thirdLargest != Integer.MIN_VALUE) {
-            System.out.println("Second Largest: " + secondLargest);
-            System.out.println("Third Largest: " + thirdLargest);
-        } else {
-            System.out.println("Not enough distinct values to determine second and third largest.");
+    // Iterate through the array to find the largest, second largest, and third largest numbers
+    for (int num : values) {
+        if (num > first) {
+            // Shift values down
+            third = second;
+            second = first;
+            first = num;
+        } else if (num > second && num < first) {
+            // Update second and third
+            third = second;
+            second = num;
+        } else if (num > third && num < second) {
+            // Update third
+            third = num;
         }
     }
+
+    // Print second and third largest numbers
+    System.out.println("Second largest number: " + second);
+    System.out.println("Third largest number: " + third);
+}
 }
